@@ -1,5 +1,5 @@
 cask "bluefin-wallpapers" do
-  version "2025-12-14"
+  version "2026-08-21"
 
   name "bluefin-wallpapers"
   desc "Wallpapers for Bluefin"
@@ -13,7 +13,7 @@ cask "bluefin-wallpapers" do
 
   on_macos do
     url "https://github.com/ublue-os/artwork/releases/download/bluefin-v#{version}/bluefin-wallpapers-macos.tar.zstd"
-    sha256 "2d6c6673a21e27e6683ffc1c00b6995c68e9ee2af8700a84a9624f7b655cf9fa"
+    sha256 "afafb174f8d16b374ed1bf467b0c688f2e27fd49c44c5e4aba743c36b2b5fa1a"
 
     Dir.glob("#{staged_path}/*").each do |file|
       artifact file, target: "#{Dir.home}/Library/Desktop Pictures/Bluefin/#{File.basename(file)}"
@@ -26,14 +26,14 @@ cask "bluefin-wallpapers" do
 
     if File.exist?("/usr/bin/plasmashell")
       url "https://github.com/ublue-os/artwork/releases/download/bluefin-v#{version}/bluefin-wallpapers-kde.tar.zstd"
-      sha256 "9450ef9c2b406522fbc0823aebe3915508b103bf081852fd3cbc85a1abe3753a"
+      sha256 "d1c3b022e5ff0532e2727de76bc9bc8fb2efb74c6201c4d1cda55dbbc3826be9"
 
       Dir.glob("#{staged_path}/*").each do |file|
         artifact file, target: "#{kde_destination_dir}/#{File.basename(file)}"
       end
     elsif File.exist?("/usr/bin/gnome-shell") || File.exist?("/usr/bin/mutter")
       url "https://github.com/ublue-os/artwork/releases/download/bluefin-v#{version}/bluefin-wallpapers-gnome.tar.zstd"
-      sha256 "5c243462d74bf4a1fa60659972f2fdf45fd16b226bd2d4f7c2d27701176d5eb6"
+      sha256 "b3c5332f28c06265aa39284c0e1fad5ec970860d06737ebae24072a17cb52bf4"
 
       Dir.glob("#{staged_path}/images/*").each do |file|
         artifact file, target: "#{destination_dir}/#{File.basename(file)}"
@@ -44,7 +44,7 @@ cask "bluefin-wallpapers" do
       end
     else
       url "https://github.com/ublue-os/artwork/releases/download/bluefin-v#{version}/bluefin-wallpapers-png.tar.zstd"
-      sha256 "1a15439aab464b3aa5380370863648e079f3421d96969499eed877077a865727"
+      sha256 "52cce2d24ef1df7978b432c5f248322af27b416efa334e854f57fc9f99decb51"
 
       Dir.glob("#{staged_path}/*").each do |file|
         artifact file, target: "#{destination_dir}/#{File.basename(file)}"
