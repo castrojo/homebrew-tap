@@ -1,5 +1,5 @@
 cask "bluefin-wallpapers-extra" do
-  version "2026-04-13"
+  version "2026-05-09"
 
   name "bluefin-wallpapers-extra"
   desc "Extra Wallpapers for Bluefin"
@@ -13,19 +13,19 @@ cask "bluefin-wallpapers-extra" do
 
   on_macos do
     url "https://github.com/ublue-os/artwork/releases/download/bluefin-extra-v#{version}/bluefin-wallpapers-extra-macos.tar.zstd"
-    sha256 "4c4130340695a1a57c2806dd7df6d873d5d83b5f62896b09a299b84682132b2b"
+    sha256 "619dc6807432318f0ce5316d77f77bd6cd4549a1c9509bdba10074f71b742ff2"
   end
 
   on_linux do
     if File.exist?("/usr/bin/plasmashell")
       url "https://github.com/ublue-os/artwork/releases/download/bluefin-extra-v#{version}/bluefin-wallpapers-extra-kde.tar.zstd"
-      sha256 "3234864f54eefb4d80332225b727150c706744b03b96ef6495b4a5996987926d"
+      sha256 "0f690073b3d681da24eb9a349ea33669863d4220733c1997577f705aaa43ee70"
     elsif File.exist?("/usr/bin/gnome-shell") || File.exist?("/usr/bin/mutter")
       url "https://github.com/ublue-os/artwork/releases/download/bluefin-extra-v#{version}/bluefin-wallpapers-extra-gnome.tar.zstd"
-      sha256 "760d32e42c17fae0090121abe1422e8f8512cf7ca175853a9726bbf4456102be"
+      sha256 "73a5e034577a665e56be0e8fe0d54f9fdbd7f61096bf4fa638cede41c07aa2e4"
     else
       url "https://github.com/ublue-os/artwork/releases/download/bluefin-extra-v#{version}/bluefin-wallpapers-extra-png.tar.zstd"
-      sha256 "fb4c7e3690f024f556dabfd85dd60db48dcb17713968cb1e983049414ed0dc7e"
+      sha256 "dafdb5e47d0a967b7bcfaeabe4afda0d75575fd7ef28b8120c924fc19c53f02c"
     end
   end
 
